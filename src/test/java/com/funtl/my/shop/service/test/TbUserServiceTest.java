@@ -7,9 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.util.DigestUtils;
 
-import java.util.Date;
 
 /**
  * @author Unicorn
@@ -24,7 +22,7 @@ public class TbUserServiceTest {
 
     @Test
     public void testInsert() {
-        TbUser tbUser = new TbUser();
+        /*TbUser tbUser = new TbUser();
         tbUser.setEmail("admin@funtl.com");
         tbUser.setPassword(DigestUtils.md5DigestAsHex("admin".getBytes()));
         tbUser.setPhone("15888888888");
@@ -32,12 +30,14 @@ public class TbUserServiceTest {
         tbUser.setCreated(new Date());
         tbUser.setUpdate(new Date());
 
-        tbUserDao.insert(tbUser);
+        tbUserDao.insert(tbUser);*/
     }
 
     @Test
     public void testGetUserByEmail() {
         TbUser user = tbUserDao.getUserByEmail("admin@funtl.com");
-        System.out.println(user.getPassword());
+        if (user != null) {
+            System.out.println(user.getPassword());
+        }
     }
 }
