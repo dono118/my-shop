@@ -3,10 +3,9 @@ package com.funtl.my.shop.service.impl;
 import com.funtl.my.shop.dao.TbUserDao;
 import com.funtl.my.shop.entity.TbUser;
 import com.funtl.my.shop.service.TbUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
-
-import javax.annotation.Resource;
 
 /**
  * @author Unicorn
@@ -15,7 +14,7 @@ import javax.annotation.Resource;
 @Service
 public class TbUserServiceImpl implements TbUserService {
 
-    @Resource
+    @Autowired
     private TbUserDao tbUserDao;
 
     @Override
