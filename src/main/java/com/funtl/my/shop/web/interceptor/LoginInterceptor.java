@@ -1,4 +1,4 @@
-package com.funtl.my.shop.web.Interceptor;
+package com.funtl.my.shop.web.interceptor;
 
 import com.funtl.my.shop.commons.constant.ConstantUtils;
 import com.funtl.my.shop.entity.TbUser;
