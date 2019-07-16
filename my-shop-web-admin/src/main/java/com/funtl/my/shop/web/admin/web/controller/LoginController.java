@@ -27,10 +27,11 @@ public class LoginController {
     /**
      * 跳转登录页面
      *
+     * @param request 客户端的请求
      * @return 跳转页面
      */
     @RequestMapping(value = {"", "login"}, method = RequestMethod.GET)
-    public String login(HttpServletRequest request, HttpServletResponse response) {
+    public String login(HttpServletRequest request) {
         String userInfo = CookieUtils.getCookieValue(request, ConstantUtils.COOKIE_USER_INFO);
         if (StringUtils.isNotBlank(userInfo)) {
             String[] userInfoArray = userInfo.split(":");
@@ -53,6 +54,8 @@ public class LoginController {
      *
      * @param email 邮箱
      * @param password 密码
+     * @param request 客户端的请求
+     * @param response 服务器的响应
      * @return 跳转页面
      */
     @RequestMapping(value = "login", method = RequestMethod.POST)
@@ -68,7 +71,7 @@ public class LoginController {
 
         // 登录失败
         if (tbUser == null) {
-            return login(request, response);
+            return login(request);
         }
 
         // 登录成功
@@ -82,5 +85,18 @@ public class LoginController {
             request.getSession().setAttribute(ConstantUtils.SESSION_USER, tbUser);
             return "redirect:/main";
         }
+    }
+
+    /**
+     * 注销用户
+     *
+     * @param request 客户端的请求
+     * @return 跳转页面
+     */
+    @RequestMapping(value = "logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request) {
+        // 销毁当前 session
+        request.getSession().invalidate();
+        return login(request);
     }
 }
