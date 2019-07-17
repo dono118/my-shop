@@ -14,6 +14,6 @@
     <packaging>war</packaging>
 
     <name>my-shop-web-ui</name>
-    <description></description>
+    <description>web ui</description>
 
 </project>

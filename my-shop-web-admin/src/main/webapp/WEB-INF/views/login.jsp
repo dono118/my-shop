@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
@@ -11,15 +11,15 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="/static/assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="/static/assets/bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/font-awesome/css/font-awesome.min.css"/>
     <!-- Ionicons -->
-    <link rel="stylesheet" href="/static/assets/bower_components/Ionicons/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/Ionicons/css/ionicons.min.css"/>
     <!-- Theme style -->
-    <link rel="stylesheet" href="/static/assets/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/AdminLTE.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="/static/assets/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/plugins/iCheck/square/blue.css">
 </head>
 <!-- ./Head End -->
 
@@ -33,7 +33,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">欢迎管理员登录</p>
 
-        <form action="/login" method="post">
+        <form action="${pageContext.request.contextPath}/login" method="post">
             <div class="alert alert-danger alert-dismissible" ${message == null ? "style='display:none;'" : ""}>
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 ${message}
@@ -75,11 +75,11 @@
 <![endif]-->
 
 <!-- jQuery 3 -->
-<script src="/static/assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="/static/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- iCheck -->
-<script src="/static/assets/plugins/iCheck/icheck.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/plugins/iCheck/icheck.min.js"></script>
 <script>
     $(function () {
         $('input').iCheck({

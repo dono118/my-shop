@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <name>my-shop-dependencies</name>
-    <description></description>
+    <description>dependencies</description>
 
     <properties>
         <!-- 环境配置 -->

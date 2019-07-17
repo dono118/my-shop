@@ -14,6 +14,6 @@
     <packaging>jar</packaging>
 
     <name>my-shop-domain</name>
-    <description></description>
+    <description>domain</description>
 
 </project>

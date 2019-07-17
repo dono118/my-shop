@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
 
     <name>my-shop-commons</name>
-    <description></description>
+    <description>commons</description>
 
     <dependencies>
         <!-- Commons Begin -->
