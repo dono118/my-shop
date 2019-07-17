@@ -16,7 +16,7 @@ public class TbUser implements Serializable {
     private String phone;
     private String email;
     private Date created;
-    private Date update;
+    private Date updated;
 
     public Long getId() {
         return id;
@@ -66,11 +66,11 @@ public class TbUser implements Serializable {
         this.created = created;
     }
 
-    public Date getUpdate() {
-        return update;
+    public Date getUpdated() {
+        return updated;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }
