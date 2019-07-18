@@ -31,18 +31,22 @@
         <section class="content">
             <div class="row">
                 <div class="col-xs-12">
+                    <c:if test="${baseResult != null}">
+                        <div class="alert alert-${baseResult.status == 200 ? "success" : "danger"} alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                ${baseResult.message}
+                        </div>
+                    </c:if>
                     <div class="box">
                         <div class="box-header">
                             <h3 class="box-title">用户列表</h3>
 
-                            <div class="box-tools">
-                                <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control pull-right" placeholder="搜索">
-
-                                    <div class="input-group-btn">
-                                        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
+                            <div class="box-body">
+                                <a href="${pageContext.request.contextPath}/user/form" type="button" class="btn btn-sm btn-default"><i class="fa fa-plus"></i> 新增</a>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-sm btn-default"><i class="fa fa-trash-o"></i> 删除</button>&nbsp;&nbsp;&nbsp;
+                                <a href="#" type="button" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-import"></i> 导入</a>&nbsp;&nbsp;&nbsp;
+                                <a href="#" type="button" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-export"></i> 导出</a>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-sm btn-primary"><i class="fa fa-search"></i> 搜索</button>
                             </div>
                         </div>
                         <!-- /.box-header -->
@@ -64,7 +68,9 @@
                                         <td>${tbUser.email}</td>
                                         <td><fmt:formatDate value="${tbUser.updated}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                         <td>
-                                            <a href="#">查看</a>|<a href="#">修改</a>|<a href="#">删除</a>
+                                            <a href="#" type="button" class="btn btn-sm btn-default"><i class="fa fa-eye"></i> 查看</a>&nbsp;&nbsp;&nbsp;
+                                            <a href="${pageContext.request.contextPath}/user/form?id=${tbUser.id}" type="button" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i> 编辑</a>&nbsp;&nbsp;&nbsp;
+                                            <a href="#" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash-o"></i> 删除</a>
                                         </td>
                                     </tr>
                                 </c:forEach>

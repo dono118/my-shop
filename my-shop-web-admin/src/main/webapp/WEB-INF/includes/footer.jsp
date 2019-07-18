@@ -18,7 +18,14 @@
 <script src="${pageContext.request.contextPath}/static/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Slimscroll -->
 <script src="${pageContext.request.contextPath}/static/assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- jQuery Validation Plugin - v1.14.0 -->
+<script src="${pageContext.request.contextPath}/static/assets/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/plugins/jquery-validation/js/additional-methods.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/plugins/jquery-validation/js/localization/messages_zh.min.js"></script>
 <!-- FastClick -->
 <script src="${pageContext.request.contextPath}/static/assets/bower_components/fastclick/lib/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="${pageContext.request.contextPath}/static/assets/js/adminlte.min.js"></script>
+
+<!-- App -->
+<script src="${pageContext.request.contextPath}/static/assets/app/validate.js"></script>

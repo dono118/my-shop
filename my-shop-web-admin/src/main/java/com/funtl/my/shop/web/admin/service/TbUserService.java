@@ -1,5 +1,6 @@
 package com.funtl.my.shop.web.admin.service;
 
+import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.domain.TbUser;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public interface TbUserService {
      *
      * @param tbUser 用户
      */
-    void insert(TbUser tbUser);
+    BaseResult save(TbUser tbUser);
 
     /**
      * 根据用户ID删除用户信息
