@@ -16,4 +16,11 @@
     <name>my-shop-domain</name>
     <description>domain</description>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.funtl</groupId>
+            <artifactId>my-shop-commons</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+    </dependencies>
 </project>

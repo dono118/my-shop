@@ -7,8 +7,12 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 <!-- Font Awesome -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/font-awesome/css/font-awesome.min.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/plugins/iCheck/all.css" />
 <!-- Ionicons -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/Ionicons/css/ionicons.min.css">
+<!-- DataTables -->
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <!-- Theme style -->
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/AdminLTE.min.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins

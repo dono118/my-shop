@@ -34,7 +34,7 @@ public class TbUserServiceTest {
 
     @Test
     public void testGetUserById() {
-        TbUser tbUser = tbUserDao.getUserById((long) 38);
+        TbUser tbUser = tbUserDao.getById((long) 38);
         if (tbUser != null) {
             System.out.println(tbUser.getEmail());
         }
@@ -63,7 +63,7 @@ public class TbUserServiceTest {
 
     @Test
     public void testDelete() {
-        TbUser tbUser = tbUserDao.getUserById(41L);
+        TbUser tbUser = tbUserDao.getById(41L);
         if (tbUser != null) {
             tbUserDao.delete(41L);
         }
@@ -82,7 +82,7 @@ public class TbUserServiceTest {
 
     @Test
     public void testUpdate() {
-        TbUser tbUser = tbUserDao.getUserById(44L);
+        TbUser tbUser = tbUserDao.getById(44L);
         tbUser.setEmail("jack@hotmail.com");
         tbUser.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
         tbUser.setUpdated(new Date());

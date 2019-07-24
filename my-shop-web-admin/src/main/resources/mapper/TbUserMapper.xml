@@ -19,7 +19,7 @@
         ORDER BY a.updated DESC
     </select>
 
-    <select id="getUserById" resultType="TbUser">
+    <select id="getById" resultType="TbUser">
         SELECT
           <include refid="tbUserColumns" />
         FROM
@@ -91,5 +91,40 @@
           tb_user AS a
         WHERE
           a.username LIKE CONCAT("%", #{username}, "%")
+    </select>
+
+    <select id="page" resultType="TbUser" parameterType="java.util.Map">
+        SELECT
+        <include refid="tbUserColumns" />
+        FROM
+        tb_user AS a
+        <where>
+            <if test="pageParams.username != null and pageParams.username != ''" >
+                AND a.username LIKE CONCAT ('%', #{pageParams.username}, '%')
+            </if>
+            <if test="pageParams.phone != null and pageParams.phone != ''" >
+                AND a.phone LIKE CONCAT ('%', #{pageParams.phone}, '%')
+            </if>
+            <if test="pageParams.email != null and pageParams.email != ''" >
+                AND a.email LIKE CONCAT ('%', #{pageParams.email}, '%')
+            </if>
+        </where>
+        ORDER BY a.updated DESC
+        LIMIT #{start}, #{length}
+    </select>
+
+    <select id="count" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM tb_user AS a
+        <where>
+            <if test="username != null and username != ''" >
+                AND a.username LIKE CONCAT ('%', #{username}, '%')
+            </if>
+            <if test="phone != null and phone != ''" >
+                AND a.phone LIKE CONCAT ('%', #{phone}, '%')
+            </if>
+            <if test="email != null and email != ''" >
+                AND a.email LIKE CONCAT ('%', #{email}, '%')
+            </if>
+        </where>
     </select>
 </mapper>
